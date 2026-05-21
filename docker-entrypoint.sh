@@ -438,12 +438,14 @@ path: mailman.log
 [logging.bounce]
 path: bounce.log
 format: %(asctime)s mailman/bounce[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 
 [logging.config]
 
 [logging.database]
 level: warn
 format: %(asctime)s mailman/db[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 
 [logging.debug]
 path: debug.log
@@ -455,9 +457,11 @@ level: info
 
 [logging.http]
 format: %(asctime)s mailman/http[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 
 [logging.gunicorn]
 format: %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+datefmt: %b %d %H:%M:%S
 
 [logging.locks]
 
@@ -465,6 +469,8 @@ format: %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
 
 [logging.plugins]
 path: plugins.log
+format: %(asctime)s mailman/plugins[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 
 [logging.runner]
 format: %(asctime)s mailman/runner[%(process)d] %(message)s [%(filename)s:%(lineno)d]
@@ -472,6 +478,7 @@ format: %(asctime)s mailman/runner[%(process)d] %(message)s [%(filename)s:%(line
 [logging.smtp]
 path: smtp.log
 format: %(asctime)s mailman/smtp[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 every: $msgid smtp to $listname for $recip recips, completed in $time seconds
 success: $msgid post to $listname from $sender, $size bytes
 refused: $msgid post to $listname from $sender, $size bytes, $refused failures
@@ -479,12 +486,15 @@ failure: $msgid delivery to $recip failed with code $smtpcode, $smtpmsg
 
 [logging.subscribe]
 format: %(asctime)s mailman/subscribe[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 
 [logging.task]
 format: %(asctime)s mailman/task[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 
 [logging.vette]
 format: %(asctime)s mailman/vette[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+datefmt: %b %d %H:%M:%S
 EOF
 
 # Now chown the places where mailman wants to write stuff.
