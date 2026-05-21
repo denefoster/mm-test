@@ -425,13 +425,15 @@ EOF
 
 cat >>/etc/mailman.cfg <<EOF
 [logging.template]
-format: %(asctime)s mailman/mailman[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+format: %(asctime)s mailman/%(processName)s[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+
 datefmt: %b %d %H:%M:%S
 propagate: no
 level: info
 path: mailman.log
 
 [logging.root]
+format: %(asctime)s mailman/%(processName)s[%(process)d] %(message)s [%(filename)s:%(lineno)d]
 
 [logging.archiver]
 
