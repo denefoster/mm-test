@@ -425,7 +425,7 @@ EOF
 
 cat >>/etc/mailman.cfg <<EOF
 [logging.template]
-format: %(asctime)s %(processName)s[%(process)d] %(message)s [%(filename)s:%(lineno)d]
+format: %(asctime)s mailman/mailman[%(process)d] %(message)s [%(filename)s:%(lineno)d]
 datefmt: %b %d %H:%M:%S
 propagate: no
 level: info
@@ -460,7 +460,7 @@ format: %(asctime)s mailman/http[%(process)d] %(message)s [%(filename)s:%(lineno
 datefmt: %b %d %H:%M:%S
 
 [logging.gunicorn]
-format: %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+format: %(asctime)s mailman/gunicorn[%(process)d] %(message)s [%(filename)s:%(lineno)d]
 datefmt: %b %d %H:%M:%S
 
 [logging.locks]
