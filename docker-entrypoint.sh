@@ -477,7 +477,6 @@ format: %(asctime)s mailman/runner[%(process)d] %(message)s [%(filename)s:%(line
 
 [logging.smtp]
 path: smtp.log
-format: %(asctime)s mailman/smtp[%(process)d] %(message)s [%(filename)s:%(lineno)d]
 datefmt: %b %d %H:%M:%S
 every: $msgid smtp to $listname for $recip recips, completed in $time seconds
 success: $msgid post to $listname from $sender, $size bytes
