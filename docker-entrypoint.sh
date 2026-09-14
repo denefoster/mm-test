@@ -185,7 +185,7 @@ smtp_verify_hostname: $SMTP_VERIFY_HOSTNAME
 smtp_verify_cert: $SMTP_VERIFY_CERT
 verp_confirmations: yes
 verp_personalized_deliveries: no
-verp_delivery_interval: 0
+verp_delivery_interval: 1
 
 
 
