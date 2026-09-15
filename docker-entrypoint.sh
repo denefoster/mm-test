@@ -186,7 +186,7 @@ smtp_verify_cert: $SMTP_VERIFY_CERT
 verp_confirmations: yes
 verp_personalized_deliveries: no
 verp_delivery_interval: 5
-max_recipients: 50
+max_recipients: 200
 max_delivery_threads: 10
 
 
