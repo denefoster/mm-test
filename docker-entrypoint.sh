@@ -184,9 +184,9 @@ smtp_secure_mode: $SMTP_SECURE_MODE
 smtp_verify_hostname: $SMTP_VERIFY_HOSTNAME
 smtp_verify_cert: $SMTP_VERIFY_CERT
 verp_confirmations: yes
-verp_personalized_deliveries: no
+verp_personalized_deliveries: ${VERP_DELIVERIES:-no}
 verp_delivery_interval: 5
-max_recipients: 200
+max_recipients: ${MAX_RECIPIENTS:-150}
 max_delivery_threads: 10
 
 
