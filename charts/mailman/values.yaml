@@ -1,5 +1,13 @@
 mailman:
+  site_owner: me@myhost.com
   hostname: mailman
+  exporter:
+    enabled: true
+  cron:
+    enabled: true
+    # These are based off UTC,
+    admin_notify: "0 9 * * *"
+    digest_periodic: "0 10 * * *"
   dbUrl:
     existingSecretName: db-app
     existingSecretKey: uri
@@ -165,6 +173,9 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
+strategy:
+  type: Recreate
+
 # Additional volumes on the output Deployment definition.
 volumes: []
   # - name: foo
@@ -177,6 +188,10 @@ volumeMounts: []
   # - name: foo
   #   mountPath: "/etc/foo"
   #   readOnly: true
+
+dnsPolicy: ""
+
+dnsConfig: {}
 
 nodeSelector: {}
 
@@ -198,6 +213,7 @@ persistence:
 filebeat:
   enabled: false
   tlsCA: false
+  filebeatVersion: 9.3.3
   loggingHostname: my-mailman
   logstashHost: 127.0.0.1
   logstashPort: 5044
@@ -206,3 +222,4 @@ filebeat:
     - k8s
   filePaths:
     - /var/logs/*.log
+
